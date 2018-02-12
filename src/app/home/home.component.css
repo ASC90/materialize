@@ -1,0 +1,11 @@
+button:hover {
+  background-color: red !important;
+}
+
+#respawn {
+  background-color: navajowhite !important;
+}
+
+#body {
+  background-color: lightgrey !important;
+}

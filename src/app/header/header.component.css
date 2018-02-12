@@ -1,0 +1,8 @@
+#img {
+  width: 100px;
+  height: 64px;
+  background-image: url("https://s.w.org/about/images/wordpress-logo-notext-bg.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}

@@ -9,3 +9,6 @@ button:hover {
 #body {
   background-color: lightgrey !important;
 }
+label[data-error], label[data-success] {
+  width: 100%;
+}

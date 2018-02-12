@@ -8,6 +8,7 @@ import { JsonUrlService } from '../json-url.service';
 import { AsyncPipe } from '@angular/common';
 declare var $: any;
 
+const regex = new RegExp(/^[0-9]{5}$/);
 /*function numerosPrimos(max) {
   var numeroLimite = max;
   var unArr = [];
@@ -59,9 +60,28 @@ export class HomeComponent implements OnInit {
   
   
   ngOnInit(): any {
+    document.getElementById("respawn").addEventListener("input", function () {
+      //alert("ha entrado");
+      if ((regex.test($("#respawn").val()))) {
+        $("#respawn-label").attr('data-success', "Correcto");
+        $("#respawn").addClass("valid");
+        $("#respawn").removeClass("invalid");
+      }
+      else if ($("#respawn").val() == "") {
+        $("#respawn-label").attr('data-error', "Campo vacío");
+        $("#respawn").addClass("invalid");
+        $("#respawn").removeClass("valid");
+      }
+      else {
+        $("#respawn-label").attr('data-error', "Se precisan 5 dígitos");
+        $("#respawn").addClass("invalid");
+        $("#respawn").removeClass("valid");
+      }
+    });
+    
     this.getUrl();
     //$("#num-primos").html(this.numerosPrimos(1000));
-    this.arrNumPrimos = this.numerosPrimos(100000);
+    this.arrNumPrimos = this.numerosPrimos(1000);
     //setTimeout(function () { alert("Hola"); this.arrNumPrimos = this.numerosPrimos(1000); }, 3000) 
     $("#btn").click(function (e) {
       alert($("#respawn").val());
